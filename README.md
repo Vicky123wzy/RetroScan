@@ -139,6 +139,3 @@ If you use this code or the resulting assemblies, please cite the following pape
 
 #### This software is distributed under The MIT License (MIT).
 
-
-
-# RetroScan
