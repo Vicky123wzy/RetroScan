@@ -1,16 +1,29 @@
 # RetroScan
 
 ## Overview
-RetroScan is a pipeline tool for retrocopy identification, which integrates a series of bioinformatics tools (LAST, clustalw, KaKs_Calculator, BEDtools, HISAT2, StringTie, samtools and Shiny) and scripts. It scans retrocopies based on the alignments between protein-coding genes and the whole genome sequences. This tool can also analyze heterosense substitution and synonymous substitution, compare the gene structure between parental genes and retrocopies, and calculate the expression values of them. Moreover, RetroScan has a user-friendly visualization interface, which showing the overall statistical information, the structure diagram of retrocopies, the distribution of ka/ks and the heatmap of FPKM using the Shiny package in R.
+
+RetroScan is an easy-to-use tool for retrocopy identification that integrates a series of bioinformatics tools (LAST, BEDtools, ClustalW2, KaKs_Calculator, HISAT2, StringTie, SAMtools and Shiny) and scripts. It scans retrocopies based on alignments between protein-coding genes and whole-genome sequences. This tool can also analyze heterosense substitution and synonymous substitution, compare gene structure between parental genes and retrocopies, and calculate corresponding expression values. Moreover, RetroScan has a user-friendly visualization interface that provides overall statistical information, a retrocopy structure diagram, the nonsynonymous/synonymous substitution (Ka/Ks) ratio distribution and the fragments per kilobase per million (FPKM) heatmap using the Shiny package in R.
 
 It can be downloaded on https://github.com/Vicky123wzy/RetroScan.
 
+![Aaron Swartz](https://github.com/Vicky123wzy/RetroScan/raw/main/pic/pipeline.png)
+
 ### Getting Started
+#### Installation
+##### conda:
+```
+conda install -c biocanda -c biovicky retroscan
+```
+##### manully:
+```
+git clone https://github.com/Vicky123wzy/RetroScan.git
+```
+The retroscan.py is located in the /RetroScan/bin.
 
 
-#### Prerequisites
+The RetroScan pipeline requires the following dependencies :
 - `gffread == version 1.03.73` – https://github.com/gpertea/gffread
-- `LAST == 874`  -  http://last.cbrc.jp/
+- `LAST == 1186`  -  http://last.cbrc.jp/
 - `bedtools == v2.29.2`  -  http://last.cbrc.jp/
 - `seqkit == 0.14.0`  -  https://bioinf.shenwei.me/seqkit/
 - `diamond == v0.9.18.119`  -  http://github.com/bbuchfink/diamond
@@ -19,29 +32,21 @@ It can be downloaded on https://github.com/Vicky123wzy/RetroScan.
 - `hisat2 == 2.2.1`  -  for RNA-Seq only (http://ccb.jhu.edu/software/hisat2)
 - `stringtie == 2.1.4`  -  for RNA-Seq only (http://ccb.jhu.edu/software/stringtie)
 - `samtools == 1.9`  -  for RNA-Seq only (http://samtools.sourceforge.net/)
-- `Python >=3.6` 
+- `Python >= 3.6` 
 - `Perl == v5.26.2`
 
 
-#### Installation
-conda:
-```
-conda install -c biocanda -c biovicky retroscan
-```
-github:
-```
-git clone https://github.com/Vicky123wzy/RetroScan.git
-```
-
-
 ### USAGE
+example:
+The example data is in the /RetroScan/example, or can be downloaded from https://github.com/Vicky123wzy/RetroScan/tree/main/example.
+
 No RNA-Seq data:
 ```
-retroscan.py genome_file gff_file Output_dir
+retroscan.py test.fa.zip test.gff3.zip Output_dir
 ```
 RNA-Seq data:
 ```
-retroscan.py genome_file gff_file Output_dir --RNASeq_path ./rnaseq_file
+retroscan.py test.fa.zip test.gff3.zip Output_dir --RNASeq_path rnaseq_file
 ```
 
 
@@ -128,14 +133,17 @@ f) 	RetroScan.log
 
 
 #### visualization
-The online visualization website is: https://bioinfovicky.shinyapps.io/retroscan-app/
+The online visualization website is: https://bioinfovicky.shinyapps.io/retroscan-app/.
 
 User can upload the results files and download the figures.
 
+Users can also download the visualization webpage (https://github.com/Vicky123wzy/RetroScan/tree/main/RetroScan-app) to compile and use in local R.
+
 
 ### Citations and licensing
-If you use this code or the resulting assemblies, please cite the following paper:
+If you use this code or the resulting assemblies, please cite the following  paper:
+
+RetroScan: an easy-to-use pipeline for retrocopy annotation and visualization. 
 
 
 #### This software is distributed under The MIT License (MIT).
-
