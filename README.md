@@ -32,7 +32,7 @@ The RetroScan pipeline requires the following dependencies :
 - `hisat2 == 2.2.1`  -  for RNA-Seq only (http://ccb.jhu.edu/software/hisat2)
 - `stringtie == 2.1.4`  -  for RNA-Seq only (http://ccb.jhu.edu/software/stringtie)
 - `samtools == 1.9`  -  for RNA-Seq only (http://samtools.sourceforge.net/)
-- `Python >= 3.6` 
+- `Python >= 3.6`  -  require `panda` `matplotlib` `numpy`
 - `Perl == v5.26.2`
 
 
@@ -138,6 +138,31 @@ The online visualization website is: https://bioinfovicky.shinyapps.io/retroscan
 User can upload the results files and download the figures.
 
 Users can also download the visualization webpage (https://github.com/Vicky123wzy/RetroScan/tree/main/RetroScan-app) to compile and use in local R.
+```
+library(shiny)
+library(dplyr)
+library(stringr)
+library(png)
+library(shinyjs)
+library(DT)
+library(visNetwork)
+library(rintrojs)
+library(DT)
+library(shinydashboard)
+library(ggplot2)
+library(VennDiagram)
+library(RColorBrewer)
+library(UpSetR)
+library(Biostrings)
+library(muscle)
+library(ape)
+library(ggmsa)
+library(patchwork)
+library(pheatmap)
+library(colourpicker)
+
+shiny::runApp('RetroScan-app')
+```
 
 
 ### Citations and licensing
