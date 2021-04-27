@@ -34,7 +34,7 @@ The RetroScan pipeline requires the following dependencies :
 - `hisat2 == 2.2.1`  -  for RNA-Seq only (http://ccb.jhu.edu/software/hisat2)
 - `stringtie == 2.1.4`  -  for RNA-Seq only (http://ccb.jhu.edu/software/stringtie)
 - `samtools == 1.9`  -  for RNA-Seq only (http://samtools.sourceforge.net/)
-- `Python >= 3.6`  -  require `panda` `matplotlib` `numpy`
+- `Python == 3.8`  -  require `panda` `matplotlib` `numpy`
 - `Perl == v5.26.2`
 
 
