@@ -14,7 +14,7 @@ It can be downloaded on https://github.com/Vicky123wzy/RetroScan.
 ```
 conda create -n retroscan python=3.8 
 conda activate retroscan
-conda install -c biovicky -c biocanda retroscan
+conda install -c biovicky -c bioconda retroscan
 ```
 ##### manully:
 ```
