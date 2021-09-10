@@ -39,6 +39,8 @@ The RetroScan pipeline requires the following dependencies :
 
 
 ### USAGE
+To run the RetroScan, it is recommended to use the genome with masked repetitive sequences.
+
 example:
 The example data is in the /RetroScan/example, or can be downloaded from https://github.com/Vicky123wzy/RetroScan/tree/main/example.
 
