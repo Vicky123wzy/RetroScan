@@ -197,6 +197,10 @@ def gene_trans_info(tmp_path, protein_path, gff_file):
             if len(cds_site_list) == 1:
                 pep_site.append("NA")
             elif len(cds_site_list) > 1:
+                if mRNA_out[key][2] == "-":
+                    cds_site_list.sort(reverse=True)
+                elif mRNA_out[key][2] == "+":
+                    cds_site_list.sort()
                 for num in cds_site_list:
                     len_cds = int(num.split("-")[1]) - int(num.split("-")[0]) + 1
                     pep_start = (len_cds + int(remainder)) // 3 + pep_start
